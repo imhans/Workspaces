@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17AB8664289C66D5A05F69B3 /* Pods_WebCrawling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7165FECDCA1AA1C6B6C680 /* Pods_WebCrawling.framework */; };
+		BFB76ACB276A24150098633E /* WebCrawlingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB76ACA276A24150098633E /* WebCrawlingApp.swift */; };
+		BFB76ACD276A24150098633E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB76ACC276A24150098633E /* ContentView.swift */; };
+		BFB76ACF276A24160098633E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB76ACE276A24160098633E /* Assets.xcassets */; };
+		BFB76AD2276A24160098633E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB76AD1276A24160098633E /* Preview Assets.xcassets */; };
+		BFB76ADA276A25DB0098633E /* CrawlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB76AD9276A25DB0098633E /* CrawlManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11D41D2FCBE82C289C6C274C /* Pods-WebCrawling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebCrawling.debug.xcconfig"; path = "Target Support Files/Pods-WebCrawling/Pods-WebCrawling.debug.xcconfig"; sourceTree = "<group>"; };
+		ACEFD6F2BAC934C38B02282F /* Pods-WebCrawling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebCrawling.release.xcconfig"; path = "Target Support Files/Pods-WebCrawling/Pods-WebCrawling.release.xcconfig"; sourceTree = "<group>"; };
+		BA7165FECDCA1AA1C6B6C680 /* Pods_WebCrawling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebCrawling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB76AC7276A24150098633E /* WebCrawling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebCrawling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB76ACA276A24150098633E /* WebCrawlingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCrawlingApp.swift; sourceTree = "<group>"; };
+		BFB76ACC276A24150098633E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BFB76ACE276A24160098633E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFB76AD1276A24160098633E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFB76AD3276A24160098633E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB76AD9276A25DB0098633E /* CrawlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFB76AC4276A24150098633E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17AB8664289C66D5A05F69B3 /* Pods_WebCrawling.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20E5E693CF84A6802E0931C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA7165FECDCA1AA1C6B6C680 /* Pods_WebCrawling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFB76ABE276A24150098633E = {
+			isa = PBXGroup;
+			children = (
+				BFB76AC9276A24150098633E /* WebCrawling */,
+				BFB76AC8276A24150098633E /* Products */,
+				D86EFA5557F0A5A2C534D127 /* Pods */,
+				20E5E693CF84A6802E0931C9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BFB76AC8276A24150098633E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFB76AC7276A24150098633E /* WebCrawling.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFB76AC9276A24150098633E /* WebCrawling */ = {
+			isa = PBXGroup;
+			children = (
+				BFB76ACA276A24150098633E /* WebCrawlingApp.swift */,
+				BFB76ACC276A24150098633E /* ContentView.swift */,
+				BFB76ACE276A24160098633E /* Assets.xcassets */,
+				BFB76AD3276A24160098633E /* Info.plist */,
+				BFB76AD9276A25DB0098633E /* CrawlManager.swift */,
+				BFB76AD0276A24160098633E /* Preview Content */,
+			);
+			path = WebCrawling;
+			sourceTree = "<group>";
+		};
+		BFB76AD0276A24160098633E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BFB76AD1276A24160098633E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D86EFA5557F0A5A2C534D127 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11D41D2FCBE82C289C6C274C /* Pods-WebCrawling.debug.xcconfig */,
+				ACEFD6F2BAC934C38B02282F /* Pods-WebCrawling.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFB76AC6276A24150098633E /* WebCrawling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB76AD6276A24160098633E /* Build configuration list for PBXNativeTarget "WebCrawling" */;
+			buildPhases = (
+				7341C9DAD2CF935B455D6465 /* [CP] Check Pods Manifest.lock */,
+				BFB76AC3276A24150098633E /* Sources */,
+				BFB76AC4276A24150098633E /* Frameworks */,
+				BFB76AC5276A24150098633E /* Resources */,
+				921AE0B16BA9CE9DC5279561 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebCrawling;
+			productName = WebCrawling;
+			productReference = BFB76AC7276A24150098633E /* WebCrawling.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFB76ABF276A24150098633E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					BFB76AC6276A24150098633E = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = BFB76AC2276A24150098633E /* Build configuration list for PBXProject "WebCrawling" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFB76ABE276A24150098633E;
+			productRefGroup = BFB76AC8276A24150098633E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFB76AC6276A24150098633E /* WebCrawling */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFB76AC5276A24150098633E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB76AD2276A24160098633E /* Preview Assets.xcassets in Resources */,
+				BFB76ACF276A24160098633E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7341C9DAD2CF935B455D6465 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebCrawling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		921AE0B16BA9CE9DC5279561 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebCrawling/Pods-WebCrawling-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebCrawling/Pods-WebCrawling-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebCrawling/Pods-WebCrawling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFB76AC3276A24150098633E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB76ACD276A24150098633E /* ContentView.swift in Sources */,
+				BFB76ADA276A25DB0098633E /* CrawlManager.swift in Sources */,
+				BFB76ACB276A24150098633E /* WebCrawlingApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BFB76AD4276A24160098633E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFB76AD5276A24160098633E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFB76AD7276A24160098633E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11D41D2FCBE82C289C6C274C /* Pods-WebCrawling.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WebCrawling/Preview Content\"";
+				DEVELOPMENT_TEAM = LFZR92V6WF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WebCrawling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = imhans.Swift.Workspaces.WebCrawling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFB76AD8276A24160098633E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACEFD6F2BAC934C38B02282F /* Pods-WebCrawling.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WebCrawling/Preview Content\"";
+				DEVELOPMENT_TEAM = LFZR92V6WF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WebCrawling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = imhans.Swift.Workspaces.WebCrawling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFB76AC2276A24150098633E /* Build configuration list for PBXProject "WebCrawling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB76AD4276A24160098633E /* Debug */,
+				BFB76AD5276A24160098633E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB76AD6276A24160098633E /* Build configuration list for PBXNativeTarget "WebCrawling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB76AD7276A24160098633E /* Debug */,
+				BFB76AD8276A24160098633E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFB76ABF276A24150098633E /* Project object */;
+}
