@@ -27,14 +27,31 @@ func fetchHTML() {
                 let line: [String] = [id, article]
                 lines.append(line)
             }
-            print("\(lines)")
+            print("\(lines)") //replace this line to return the 2D array
+            createCSV(from: "hello world")
+            
         } catch {
             print("Crawl Error: ", error)
         }
-        
     }
-    
-    
 }
 
+//Create a function that has a parameter for 2D array and returns a CSV file
+func createCSV(from text: String) {
+    let csvString = text
+    
+    let fileManager = FileManager.default
+    
+    do {
+        let path = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let directoryURL = path.appendingPathComponent("TU")
+        let fileURL = directoryURL.appendingPathComponent("test.csv")
+        print("\(fileURL)")
+        try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+        
+    } catch {
+        print("Error: creating a file: ", error)
+    }
+    
+}
 
