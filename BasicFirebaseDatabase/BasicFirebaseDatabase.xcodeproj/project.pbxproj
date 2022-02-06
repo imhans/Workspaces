@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFA793D927AFF61F0059C60D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA793D827AFF61F0059C60D /* User.swift */; };
 		BFD4765D27AFA5D50092C294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD4765C27AFA5D50092C294 /* AppDelegate.swift */; };
 		BFD4765F27AFA5D50092C294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD4765E27AFA5D50092C294 /* SceneDelegate.swift */; };
 		BFD4766127AFA5D50092C294 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD4766027AFA5D50092C294 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFA793D827AFF61F0059C60D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFD4765927AFA5D50092C294 /* BasicFirebaseDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicFirebaseDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD4765C27AFA5D50092C294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD4765E27AFA5D50092C294 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				BFD4766427AFA5D70092C294 /* Preview Content */,
 				BFD4767527AFA7550092C294 /* README.md */,
 				BFD4767627AFA76D0092C294 /* GoogleService-Info.plist */,
+				BFA793D827AFF61F0059C60D /* User.swift */,
 			);
 			path = BasicFirebaseDatabase;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA793D927AFF61F0059C60D /* User.swift in Sources */,
 				BFD4765D27AFA5D50092C294 /* AppDelegate.swift in Sources */,
 				BFD4765F27AFA5D50092C294 /* SceneDelegate.swift in Sources */,
 				BFD4766127AFA5D50092C294 /* ContentView.swift in Sources */,

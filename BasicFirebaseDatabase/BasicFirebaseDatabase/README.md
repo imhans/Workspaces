@@ -19,10 +19,12 @@
 3. Alert pops up if no info is entered
 
 ## Read
+1. The app automatically reads the changes of data and update the view
+2. Reflects Added/Changed/Removed data in database
 
 ## Update
 
 ## Delete
 
 
--Add Alert
+
