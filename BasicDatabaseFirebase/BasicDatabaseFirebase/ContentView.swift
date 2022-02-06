@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
+    var ref = DatabaseReference!
+    ref = Database.database().reference()
+
     var body: some View {
         Text("Hello, world!")
             .padding()
