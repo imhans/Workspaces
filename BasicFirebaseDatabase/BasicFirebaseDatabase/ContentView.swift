@@ -32,22 +32,21 @@ struct ContentView: View {
                     .font(.headline)
                 Spacer()
                 Button("+Add", action: {addNewUser()})
-                .alert(isPresented: $showingAlert) {
-                    return Alert(title: Text("Error"), message: Text("Enter your user information"), dismissButton: .default(Text("Dismiss")))
-                }
+                    .alert(isPresented: $showingAlert) {
+                        return Alert(title: Text("Error"), message: Text("Enter your user information"), dismissButton: .default(Text("Dismiss")))
+                    }
             }
             
             HStack {
-                TextField("Username", text: $username)
+                TextField("User name", text: $username)
                 Spacer()
                 TextField("First Name", text: $firstName)
                 Spacer()
                 TextField("Last Name", text: $lastName)
             }
+            .font(.subheadline)
             .padding(.bottom)
-            .onAppear {
-                self.fetchUserData()    //getData
-            }
+            
             
             // Read Part
             Text("Users")
@@ -65,12 +64,21 @@ struct ContentView: View {
                         Spacer()
                         Text(user.firstName)
                         Text(user.lastName)
-                        
-                        // Delete Part
-                        Image(systemName: "trash.fill")
-                            .foregroundColor(.gray)
                     }
                 }
+                // Delete Part
+                .onDelete(perform: { indextSet in
+                    // SwiftUI passes a set of indices to the closure that's relative to the dynamic view's underlying collection of data
+                    // Map user data with the given indices
+                    let userId = indextSet.map {
+                        self.userData[$0].userId
+                    }
+                    // print(userId[0].self)
+                    ref.child("Users").child(userId[0].self).removeValue()
+                })
+            }
+            .onAppear {
+                self.fetchUserData()    //getData
             }
         }
         .padding()
@@ -85,6 +93,12 @@ struct ContentView: View {
                 "lastName": $lastName.wrappedValue
             ]
             ref.child("Users").childByAutoId().setValue(newUser)
+            
+            // Clear text fields
+            self.$username.wrappedValue = "";
+            self.$firstName.wrappedValue = "";
+            self.$lastName.wrappedValue = "";
+            
         } else {
             self.showingAlert = true;
         }
