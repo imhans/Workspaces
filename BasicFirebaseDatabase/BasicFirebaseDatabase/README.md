@@ -24,7 +24,8 @@
 
 ## Update
 
-## Delete
 
+## Delete
+1. Swipe left a row of the list and press the Delete button
 
 

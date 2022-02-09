@@ -16,12 +16,12 @@ struct ContentView: View {
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var showingAlert = false
+    @State private var editingAlert = false
     
-    @State var userData = [User]()
+    @State var userDatas = [User]()
+    @State var userData: User? = nil
     
-    init() {
-        //self.fetchUserData()
-    }
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -52,8 +52,9 @@ struct ContentView: View {
             Text("Users")
                 .font(.headline)
             List {
-                ForEach(self.userData, id:\.self) { user in
+                ForEach(self.userDatas, id:\.self) { user in
                     HStack {
+                        
                         // username
                         Image(systemName: "heart.fill")
                         .foregroundColor(.blue)
@@ -64,6 +65,13 @@ struct ContentView: View {
                         Spacer()
                         Text(user.firstName)
                         Text(user.lastName)
+                        
+                        Image(systemName: "pencil.circle")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                            .onTapGesture {
+                                self.editingAlert = true;
+                                self.userData = User(userId: user.userId, username: user.username, firstName: user.firstName, lastName: user.lastName)
+                            }
                     }
                 }
                 // Delete Part
@@ -71,12 +79,17 @@ struct ContentView: View {
                     // SwiftUI passes a set of indices to the closure that's relative to the dynamic view's underlying collection of data
                     // Map user data with the given indices
                     let userId = indextSet.map {
-                        self.userData[$0].userId
+                        self.userDatas[$0].userId
                     }
                     // print(userId[0].self)
+                    print("The user successfully got removed from database")
                     ref.child("Users").child(userId[0].self).removeValue()
                 })
             }
+            .alert(isPresented: $editingAlert) {
+                Alert(title: Text("Delete"), message: Text("Do you want to remove this user? \n@\(self.userData!.username)"), primaryButton: .default(Text("No")), secondaryButton: .destructive(Text("Yes")))
+            }
+            
             .onAppear {
                 self.fetchUserData()    //getData
             }
@@ -92,6 +105,8 @@ struct ContentView: View {
                 "firstName": $firstName.wrappedValue,
                 "lastName": $lastName.wrappedValue
             ]
+            
+            print("New user added: @\($username.wrappedValue)")
             ref.child("Users").childByAutoId().setValue(newUser)
             
             // Clear text fields
@@ -102,6 +117,11 @@ struct ContentView: View {
         } else {
             self.showingAlert = true;
         }
+    }
+    
+    /* Update */
+    func updateUser() {
+        
     }
     
     func fetchUserData() {
@@ -121,7 +141,7 @@ struct ContentView: View {
                 newUsers.append(user as User)
             }
             
-            self.userData = newUsers
+            self.userDatas = newUsers
         }
         
     }
