@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF9C3F4B27B3FA3F00AE59D8 /* UserEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9C3F4A27B3FA3F00AE59D8 /* UserEdit.swift */; };
 		BFA793D927AFF61F0059C60D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA793D827AFF61F0059C60D /* User.swift */; };
 		BFD4765D27AFA5D50092C294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD4765C27AFA5D50092C294 /* AppDelegate.swift */; };
 		BFD4765F27AFA5D50092C294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD4765E27AFA5D50092C294 /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF9C3F4A27B3FA3F00AE59D8 /* UserEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEdit.swift; sourceTree = "<group>"; };
 		BFA793D827AFF61F0059C60D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFD4765927AFA5D50092C294 /* BasicFirebaseDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicFirebaseDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD4765C27AFA5D50092C294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				BFD4767527AFA7550092C294 /* README.md */,
 				BFD4767627AFA76D0092C294 /* GoogleService-Info.plist */,
 				BFA793D827AFF61F0059C60D /* User.swift */,
+				BF9C3F4A27B3FA3F00AE59D8 /* UserEdit.swift */,
 			);
 			path = BasicFirebaseDatabase;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			files = (
 				BFA793D927AFF61F0059C60D /* User.swift in Sources */,
 				BFD4765D27AFA5D50092C294 /* AppDelegate.swift in Sources */,
+				BF9C3F4B27B3FA3F00AE59D8 /* UserEdit.swift in Sources */,
 				BFD4765F27AFA5D50092C294 /* SceneDelegate.swift in Sources */,
 				BFD4766127AFA5D50092C294 /* ContentView.swift in Sources */,
 			);

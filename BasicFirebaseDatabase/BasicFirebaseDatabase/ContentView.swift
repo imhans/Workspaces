@@ -23,78 +23,83 @@ struct ContentView: View {
     
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
+        NavigationView {
+            VStack(alignment: .leading) {
             
-            // Create Part
-            HStack {
-                Text("Add an User")
-                    .font(.headline)
-                Spacer()
-                Button("+Add", action: {addNewUser()})
-                    .alert(isPresented: $showingAlert) {
-                        return Alert(title: Text("Error"), message: Text("Enter your user information"), dismissButton: .default(Text("Dismiss")))
-                    }
-            }
-            
-            HStack {
-                TextField("User name", text: $username)
-                Spacer()
-                TextField("First Name", text: $firstName)
-                Spacer()
-                TextField("Last Name", text: $lastName)
-            }
-            .font(.subheadline)
-            .padding(.bottom)
             
             
             // Read Part
-            Text("Users")
-                .font(.headline)
-            List {
-                ForEach(self.userDatas, id:\.self) { user in
-                    HStack {
+                List {
+                    ForEach(self.userDatas, id:\.self) { user in
+                        HStack {
+                            
+                            // username
+                            Image(systemName: "heart.fill")
+                            .foregroundColor(.blue)
                         
-                        // username
-                        Image(systemName: "heart.fill")
-                        .foregroundColor(.blue)
-                    
-                        // first and last name
-                        Text(user.username)
-                            .font(.headline)
-                        Spacer()
-                        Text(user.firstName)
-                        Text(user.lastName)
-                        
-                        Image(systemName: "pencil.circle")
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                            .onTapGesture {
-                                self.editingAlert = true;
-                                self.userData = User(userId: user.userId, username: user.username, firstName: user.firstName, lastName: user.lastName)
+                            // first and last name
+                            Text(user.username)
+                                .font(.headline)
+                            Spacer()
+                            Text(user.firstName)
+                            Text(user.lastName)
+                            
+                            // Update Part: Navigates to UserEdit page for updating
+                            NavigationLink(destination: UserEdit(user: user)) {
+                                Spacer()
+                                Text("")
                             }
+                        }
                     }
+                    // Delete Part
+                    .onDelete(perform: { indextSet in
+                        // SwiftUI passes a set of indices to the closure that's relative to the dynamic view's underlying collection of data
+                        // Map user data with the given indices
+                        let userId = indextSet.map {
+                            self.userDatas[$0].userId
+                        }
+                        // print(userId[0].self)
+                        print("The user successfully got removed from database")
+                        ref.child("Users").child(userId[0].self).removeValue()
+                    })
                 }
-                // Delete Part
-                .onDelete(perform: { indextSet in
-                    // SwiftUI passes a set of indices to the closure that's relative to the dynamic view's underlying collection of data
-                    // Map user data with the given indices
-                    let userId = indextSet.map {
-                        self.userDatas[$0].userId
-                    }
-                    // print(userId[0].self)
-                    print("The user successfully got removed from database")
-                    ref.child("Users").child(userId[0].self).removeValue()
-                })
-            }
-            .alert(isPresented: $editingAlert) {
-                Alert(title: Text("Delete"), message: Text("Do you want to remove this user? \n@\(self.userData!.username)"), primaryButton: .default(Text("No")), secondaryButton: .destructive(Text("Yes")))
+                .alert(isPresented: $editingAlert) {
+                    Alert(title: Text("Delete"), message: Text("Do you want to remove this user? \n@\(self.userData!.username)"), primaryButton: .default(Text("No")), secondaryButton: .destructive(Text("Yes")))
+                }
+                .onAppear {
+                    self.fetchUserData()    //getData
+                }
+                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 400, alignment: .center)
+                
+            
+                // Create Part
+                HStack {
+                    Text("Add an User")
+                        .font(.headline)
+                    Spacer()
+                    Button("+Add", action: {addNewUser()})
+                        .alert(isPresented: $showingAlert) {
+                            return Alert(title: Text("Error"), message: Text("Enter user information"), dismissButton: .default(Text("Dismiss")))
+                        }
+                }
+                .padding(.top)
+                .padding(.leading)
+                .padding(.trailing)
+                
+                HStack {
+                    TextField("User name", text: $username)
+                    Spacer()
+                    TextField("First Name", text: $firstName)
+                    Spacer()
+                    TextField("Last Name", text: $lastName)
+                }
+                .font(.subheadline)
+                .padding()
+                
+                .navigationBarTitle("Users")
             }
             
-            .onAppear {
-                self.fetchUserData()    //getData
-            }
         }
-        .padding()
     }
     
     /* Create */

@@ -15,15 +15,17 @@
 ### Functions
 ## Create
 1. Enter user information: Username, First Name, Last Name
-2. Press +Add button
+2. Press +Add button to create a new user into the list and database
 3. Alert pops up if no info is entered
 
 ## Read
-1. The app automatically reads the changes of data and update the view
+1. The app automatically reads the changes of data and immediately recreate the view
 2. Reflects Added/Changed/Removed data in database
 
 ## Update
-
+1. Select a user(row) in the list and then get to the User Edit Page for the selected user 
+2. Any changes of user information directly updates data in database
+3. Back button navigates back to the main page(Users)
 
 ## Delete
 1. Swipe left a row of the list and press the Delete button
