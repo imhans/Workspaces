@@ -25,10 +25,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-            
-            
-            
-            // Read Part
+                
+                // Read Part
                 List {
                     ForEach(self.userDatas, id:\.self) { user in
                         HStack {
@@ -69,12 +67,12 @@ struct ContentView: View {
                 .onAppear {
                     self.fetchUserData()    //getData
                 }
-                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 400, alignment: .center)
+//                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 400, alignment: .center)
                 
             
                 // Create Part
                 HStack {
-                    Text("Add an User")
+                    Text("Add a User")
                         .font(.headline)
                     Spacer()
                     Button("+Add", action: {addNewUser()})
@@ -96,9 +94,9 @@ struct ContentView: View {
                 .font(.subheadline)
                 .padding()
                 
-                .navigationBarTitle("Users")
+                
             }
-            
+            .navigationBarTitle("Users", displayMode: .automatic)
         }
     }
     

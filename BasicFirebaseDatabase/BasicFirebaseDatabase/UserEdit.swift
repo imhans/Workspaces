@@ -21,28 +21,20 @@ struct UserEdit: View {
             get: { $user.lastName.wrappedValue },
             set: { $user.lastName.wrappedValue = $0; self.textFieldChanged(text: $0, id: $user.userId.wrappedValue, path: "lastName") }
         )
-        
-        NavigationView {
-            
-            VStack(alignment: .leading) {
-                Text("Username")
-                    .font(.headline)
-                TextField("Edit Your User Name", text: bindingUsername)
-                    .font(.subheadline)
-                Text("First Name")
-                    .font(.headline)
-                TextField("Edit Your First Name", text: bindingFirstname)
-                    .font(.subheadline)
-                Text("Last Name")
-                    .font(.headline)
-                TextField("Edit Your Last Name", text: bindingLastname)
-                    .font(.subheadline)
-                    
+         
+        VStack(alignment: .leading) {
+            Form {
+                Section(header: Text("Username")) {
+                    TextField("Edit Your User Name", text: bindingUsername)
+                }
+                Section(header: Text("Firstname")) {
+                    TextField("Edit Your First Name", text: bindingFirstname)
+                }
+                Section(header: Text("Lastname")) {
+                    TextField("Edit Your Last Name", text: bindingLastname)
+                }
             }
-//            .textFieldStyle(RoundedBorderTextFieldStyle())
         }
-        .padding()
-        
     }
     private func textFieldChanged(text: String, id: String, path: String) {
         ref.child("Users").child(id).child(path).setValue(text)
