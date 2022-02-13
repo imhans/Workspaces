@@ -13,6 +13,8 @@
 		BF986D8F27B781A100D64C5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF986D8E27B781A100D64C5C /* Assets.xcassets */; };
 		BF986D9227B781A100D64C5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF986D9127B781A100D64C5C /* Preview Assets.xcassets */; };
 		BF986D9527B781A100D64C5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF986D9327B781A100D64C5C /* LaunchScreen.storyboard */; };
+		BFCC088227B935F900261A95 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC088127B935F900261A95 /* SignInView.swift */; };
+		BFCC088427B9371A00261A95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC088327B9371A00261A95 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		BF986D9427B781A100D64C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF986D9627B781A100D64C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF986D9C27B781C300D64C5C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BFCC088127B935F900261A95 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		BFCC088327B9371A00261A95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				BF986D9627B781A100D64C5C /* Info.plist */,
 				BF986D9027B781A100D64C5C /* Preview Content */,
 				BF986D9C27B781C300D64C5C /* README.md */,
+				BFCC088127B935F900261A95 /* SignInView.swift */,
+				BFCC088327B9371A00261A95 /* HomeView.swift */,
 			);
 			path = BasicUserRegistration;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 			files = (
 				BF986D8927B781A000D64C5C /* AppDelegate.swift in Sources */,
 				BF986D8B27B781A000D64C5C /* SceneDelegate.swift in Sources */,
+				BFCC088227B935F900261A95 /* SignInView.swift in Sources */,
+				BFCC088427B9371A00261A95 /* HomeView.swift in Sources */,
 				BF986D8D27B781A000D64C5C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
