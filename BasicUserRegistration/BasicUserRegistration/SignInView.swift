@@ -14,6 +14,9 @@ struct SignInView: View {
     @State private var firstname: String = ""
     @State private var lastname: String = ""
     
+    @State private var showPasswordCheck: Bool = false
+    @State private var pwdLength: Int = 0
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -27,7 +30,10 @@ struct SignInView: View {
                 if (isSignInMode) { // SignInMode True
                     Group (content: {
                         TextField("Email Address", text: $email)
-                        TextField("Password", text: $password)
+                            .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
+//                            .disableAutocorrection(true)
+                        SecureField("Password", text: $password)
                     })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .font(.subheadline)
@@ -58,7 +64,37 @@ struct SignInView: View {
                         TextField("Firstname", text: $firstname)
                         TextField("Lastname", text: $lastname)
                         TextField("Email Address", text: $email)
-                        TextField("Password", text: $password)
+                            .keyboardType(.emailAddress)
+                            .autocapitalization(.none)
+                        SecureField("Password", text: $password)
+                            // Catch the text changes and call checkStrengthPwd() to display password check results
+                            .onChange(of: $password.wrappedValue, perform: { value in
+                                if $password.wrappedValue.count == 1 {
+                                    showPasswordCheck = true
+                                } else if ($password.wrappedValue.count == 0) {
+                                    showPasswordCheck = false
+                                }
+                            })
+                        
+                        HStack {
+                            if showPasswordCheck {
+                                if checkStrengthPwd(pwd: $password.wrappedValue) == 0 {
+                                    Image(systemName: "minus.rectangle.portrait.fill")
+                                        .foregroundColor(.red)
+                                    Text("Password weak")
+                                        .foregroundColor(.red)
+                                        .font(.system(size: 10))
+                                } else {
+                                    Image(systemName: "checkmark.shield.fill")
+                                        .foregroundColor(.green)
+                                    Text("Password strong")
+                                        .foregroundColor(.green)
+                                        .font(.system(size: 10))
+                                }
+                                Spacer()
+                            }
+                            
+                        }
                     })
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .font(.subheadline)
@@ -96,6 +132,27 @@ struct SignInView: View {
 
 private func SignInUser() {
     
+}
+
+private func checkStrengthPwd(pwd: String) -> Int {
+    let pwdLength = pwd.count
+    var containsSymbol = false
+    var containsUppercase = false
+    
+    for character in pwd {
+        if "ABCDEFGHIZKLMNOPQRSTUVWXYZ".contains(character) {
+            containsUppercase = true
+        }
+        if "!@#$%^&*()_+-=".contains(character) {
+            containsSymbol = true
+        }
+    }
+    
+    if (pwdLength > 8 && containsSymbol && containsUppercase) {
+        return 1
+    } else {
+        return 0
+    }
 }
 
 struct SignInView_Previews: PreviewProvider {
