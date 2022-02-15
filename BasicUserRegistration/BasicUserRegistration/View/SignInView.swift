@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignInView: View {
+    
     @State private var isSignInMode = true
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var firstname: String = ""
     @State private var lastname: String = ""
+    @State private var emailForSignUp: String = ""
+    @State private var passwordForSignUp: String = ""
     
     @State private var showPasswordCheck: Bool = false
     @State private var pwdLength: Int = 0
@@ -40,7 +44,7 @@ struct SignInView: View {
                     .padding(.bottom, 4)
                     
                     Button(action: {
-                        SignInUser()
+                        SignInUser(email: $email.wrappedValue, password: $password.wrappedValue)
                     }, label: {
                         HStack {
                             Spacer()
@@ -55,7 +59,7 @@ struct SignInView: View {
                     })
                         .padding(.bottom)
                     
-                    Group (content: { // Sign Ip Error Messages
+                    Group (content: { // Sign In Error Messages
                         
                     })
                    
@@ -63,22 +67,22 @@ struct SignInView: View {
                     Group (content: {
                         TextField("Firstname", text: $firstname)
                         TextField("Lastname", text: $lastname)
-                        TextField("Email Address", text: $email)
+                        TextField("Email Address", text: $emailForSignUp)
                             .keyboardType(.emailAddress)
                             .autocapitalization(.none)
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $passwordForSignUp)
                             // Catch the text changes and call checkStrengthPwd() to display password check results
-                            .onChange(of: $password.wrappedValue, perform: { value in
-                                if $password.wrappedValue.count == 1 {
+                            .onChange(of: $passwordForSignUp.wrappedValue, perform: { value in
+                                if $passwordForSignUp.wrappedValue.count == 1 {
                                     showPasswordCheck = true
-                                } else if ($password.wrappedValue.count == 0) {
+                                } else if ($passwordForSignUp.wrappedValue.count == 0) {
                                     showPasswordCheck = false
                                 }
                             })
                         
                         HStack {
                             if showPasswordCheck {
-                                if checkStrengthPwd(pwd: $password.wrappedValue) == 0 {
+                                if checkStrengthPwd(pwd: $passwordForSignUp.wrappedValue) == 0 {
                                     Image(systemName: "minus.rectangle.portrait.fill")
                                         .foregroundColor(.red)
                                     Text("Password weak")
@@ -101,7 +105,7 @@ struct SignInView: View {
                     .padding(.bottom, 4)
                     
                     Button(action: {
-                        SignInUser()
+                        SignUpUser(email: $emailForSignUp.wrappedValue, password: $passwordForSignUp.wrappedValue)
                     }, label: {
                         HStack {
                             Spacer()
@@ -130,8 +134,29 @@ struct SignInView: View {
     }
 }
 
-private func SignInUser() {
-    
+/* Signing in users with Firebase Authentication using email address and password */
+private func SignInUser(email: String, password: String) {
+    Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        if error == nil {
+            print("Successfully signed in as user: \(result?.user.uid ?? "")")
+        } else {
+            print("Error in sign in: \(error?.localizedDescription ?? "")")
+            return
+        }
+    }
+}
+
+/* Create users with Firebase Authentication using email address and password */
+private func SignUpUser(email: String, password: String) {
+    Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        
+        if error == nil {
+            Auth.auth().signIn(withEmail: email, password: password)
+            print("Successfully created user: \(result?.user.uid ?? "")")
+        } else {
+            print("Error in createUser: \(error?.localizedDescription ?? "")")
+        }
+    }
 }
 
 private func checkStrengthPwd(pwd: String) -> Int {

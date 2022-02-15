@@ -2,8 +2,9 @@
 
 
 Sign In / Sign Up
-Sign In Succeed
-Sign In Fail
-Sign Out 
+Sign In Succeed: message, Go to HomeView
+Sign In Fail: Message
+Sign Out: Message, Go to SignOutView
 
-
+- Simple password checker
+- Authentication with Firebase using email address and password: Sign In / Sign Up
